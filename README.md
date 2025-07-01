@@ -59,7 +59,7 @@ build
 Switch to your Godot project. Make a directory called "bin" and copy all files under "output" to this directory. It should looks like this:
 
 ```txt
-/Users/haotian/Documents/GameProjects/stars
+GameProject
 ├── bin
 │   ├── GDExtensionExample.gdextension
 │   └── lib
