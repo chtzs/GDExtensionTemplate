@@ -59,6 +59,8 @@ if ( APPLE )
     set( CMAKE_OSX_ARCHITECTURES "x86_64;arm64" CACHE STRING "" )
 endif()
 
+set(CMAKE_DEBUG_POSTFIX "-debug")
+set(CMAKE_RELEASE_POSTFIX "-release")
 
 # Create our library
 add_library( ${PROJECT_NAME} SHARED)
@@ -95,13 +97,6 @@ set_target_properties( ${PROJECT_NAME}
         RUNTIME_OUTPUT_DIRECTORY "${BUILD_OUTPUT_DIR}/${LIB_DIR}"
         LIBRARY_OUTPUT_DIRECTORY "${BUILD_OUTPUT_DIR}/${LIB_DIR}"
 )
-
-if( NOT DEFINED CMAKE_DEBUG_POSTFIX )
-    set_target_properties( ${PROJECT_NAME}
-        PROPERTIES
-            DEBUG_POSTFIX "-debug"
-    )
-endif()
 
 add_subdirectory( src )
 
